@@ -1,0 +1,323 @@
+<html>
+<head></head>
+<body>
+
+    <script>
+function Q_14(){
+
+        function calculate_grade (percentage){
+ if(percentage>=90){
+return "A"
+        }
+        else if(percentage>=80&& percentage <90){
+return "B"
+        }
+       
+        else if(percentage>=70&& percentage<80){
+return "C"
+        }
+        else if(percentage>=60&&percentage<70){
+return "D"
+        }
+        else if(percentage>=40){
+return "E"
+        }
+        else
+
+       return "F";
+    }
+        /*14- Write a program to input marks of five subjects
+Physics, Chemistry, Biology, Mathematics and Computer
+, Find percentage and grade 
+Percentage >= 90%: Grad A
+Percentage >= 80%: Grad B
+Percentage >= 70%: Grad C
+Percentage >= 60%: Grad D
+Percentage >= 40%: Grad E
+Percentage < 40%: Grad F
+*/
+
+var myArray = {Physics: null, Chemistry: null, Biology: null,Mathematics: null,Computer: null};
+
+for (var key in myArray) {
+   grade= prompt("please enter the grade of "+key ,"value")
+   
+   
+   myArray[key]=grade
+
+  
+}
+for (var key in myArray) {
+alert("subject is " + key + " has grade " + myArray[key]+"  and the percentage is :" +(myArray[key]) +" % "  +calculate_grade( Math.round(myArray[key])));
+}
+}    
+
+function Q_13(){
+
+
+/*
+
+13-Write a program to input month number and print number of days in that 
+month.
+Example:
+Input: - Month Number: 1
+ Output:-. Days in Month: 31
+ */
+
+
+
+let month=prompt("please enter month number","month")
+let year= prompt("please enter year number","year")
+var getDaysInMonth = function(month,year) {
+  // Here January is 1 based
+  //Day 0 is the last day in the previous month
+ return   new Date(year, month, 0).getDate();
+// Here January is 0 based
+// return new Date(year, month+1, 0).getDate();
+};
+console.log(getDaysInMonth(month, year));
+}
+
+function Q_12(){
+/*
+12- Write a program to enter marks of five subjects and calculate total, average and
+percentage.
+Example
+Input: - Enter Marks of five subjects:
+95
+76
+58
+90
+89
+Output:-.Total marks = 435
+Average Marks =87
+Percentage =87
+*/
+
+i=0.0
+let Total_marks=0.0
+var degrees={sub1 :null ,sub2:null,sub3:null,sub4:null,sub5:null}
+for (var key in degrees) {
+   grade= prompt("please enter the grade of "+key ,null)
+   
+   
+   degrees[key]= Number(grade)
+   Total_marks +=Number(grade)
+  i++
+
+  
+}
+percentage=Total_marks/500
+avg=Total_marks/i
+
+alert("Total_marks="+Total_marks)
+alert("Average="+avg)
+alert("percentage"+percentage*100+"%")
+}
+
+function even_odd_numbers(){
+/*
+
+11- Writeaprogramthatallowstousertoinsertnumberthenprintallevennumbers 
+between 1 to this number
+Example:
+Input: 15
+Output: 2 4 6 8 10 12 14
+
+*/
+number= prompt("please enter the number of ",null)
+var even_numbers=[null]
+var odd_numbers=[null]
+let j=0,k=0
+for(i=0; i<=number;i++){
+if(i%2==0){
+even_numbers[j]=i;
+j++
+}
+else{
+        odd_numbers[k]=i;
+        k++
+}
+
+
+}
+alert(even_numbers)
+alert(odd_numbers)
+}
+
+function multiplication_table(){
+/* 10- Write a program that allows userto insert integerthen print a multiplication table up to 12.
+Example 
+Input: 5 
+Outputs:
+5 10 15 20 25 30 35 40 45 50 55 60
+*/
+
+number= prompt("please enter the number  ",null)
+var time_table=[null]
+let j=0
+for(i=0; i<=12;i++){
+
+time_table[i]=number*i
+
+}
+
+alert(time_table)
+}
+function power(){
+/* 12- Writeaprogramthattaketwointegersthenprintthepower
+Example:
+Input: 4 3
+Output: 64
+Hint how to calculate 4^3 = 4 * 4 * 4 =64*/
+
+number=prompt("enter the number",null)
+power=prompt("enter the power",null)
+result=1
+Number(number)
+alert(number)
+for(i=0;i<power;i++){
+result=result*number
+}
+alert(result)
+}
+
+function get_max(){
+/* 5- Write a program that take 3 integers from user then print the max element 
+and the min element.
+Example 1
+ Input:7,8,5
+Output:
+max element = 8 
+min element = 5 */
+var array=[5,6,20,34]
+let max = array[0];
+for (let i = 0; i < array.length; i++) {
+        
+        if(max<array[i]){
+                max=array[i]
+
+        }
+        else{
+                continue;
+        }
+        
+}
+alert(max)
+}
+
+function switch_day_number(){
+        // 5- Write a program to print total number of days in month
+alert(new Date().getDay())
+
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
+
+}
+
+
+function month_day_switchcase(){
+let month=prompt("enter month",null)
+switch (Number(month)) {
+  case 0:
+    day = "null";
+    break;
+  case 1:
+    day = "31";
+    break;
+  case 2:
+     day = "28 or 29";
+    break;
+  case 3:
+    day = "31";
+    break;
+  case 4:
+    day = "30";
+    break;
+  case 5:
+    day = "31";
+    break;
+  case 6:
+    day = "30";
+    case 7:
+    day = "31";
+    break;
+  case 8:
+    day = "31";
+    break;
+  case 9:
+     day = "30";
+    break;
+  case 10:
+    day = "31";
+    break;
+  case 11:
+    day = "30";
+    break;
+  case 12:
+    day = "31";
+    break;
+    
+}
+alert(day+" dayes " )
+}
+
+function simple_calculator_switchcase(){
+// Write a program to create Simple Calculator
+
+let result,num1,num2,operator
+
+num1=prompt("enter the first number",null)
+num2=prompt("enter the second number",null)
+operator=prompt("enter operator",null)
+ 
+Number(num1,num2)
+switch (operator) {
+  case "+":
+    result = num1+num2;
+    break;
+  
+    case "-":
+    result = num1-num2;
+    break;
+
+
+    case "*":
+    result = num1*num2;
+    break;
+
+
+
+    case "/":
+    result = num1/num2;
+    break;
+
+}
+alert(result)
+}
+Q_14()
+</script>
+    
+</body>
+
+</html>
